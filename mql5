@@ -1,0 +1,154 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                                   Greedy Blue.mq5 |
+//|                                https://forexroboteasy.com          |
+//|                                     Developed by Forex Robot Easy Team |
+//|                                                                     |
+//|                                              Terms of Reference: Greedy Blue Forex Software Code Development |
+//+------------------------------------------------------------------+
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//|                                                                  |
+//|                        Expert Advisor Settings                     |
+//|                                                                  |
+//|                                                                  |
+//+------------------------------------------------------------------+
+input double LotSize = 0.01;  // Trade lot size
+input double StopLoss = 100;  // Stop loss level in pips
+input double TakeProfit = 200;  // Take profit level in pips
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//|                                                                  |
+//|                     Expert Advisor Initialization                |
+//|                                                                  |
+//|                                                                  |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+    // Add initialization code here
+
+    return(INIT_SUCCEEDED);
+}
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//|                                                                  |
+//|                        Expert Advisor Start                       |
+//|                                                                  |
+//|                                                                  |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+    // Add trading logic here
+
+    // Check for Price Reversal Zones
+    if(IsPRZDetected())
+    {
+        // Open trade
+        OpenTrade();
+    }
+
+    // Check for crucial areas with potential for reversal
+    if(IsReversalAreaDetected())
+    {
+        // Manage trades using Volume Profile FR indicator
+        ManageTrades();
+    }
+
+    // Monitor trades and account balance
+    MonitorTrades();
+
+    // Implement trailing stop and break-even functionality
+    ImplementTrailingStop();
+    ImplementBreakEven();
+
+    // Handle trade execution and order management
+    HandleTradeExecution();
+}
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//|                                                                  |
+//|                        Expert Advisor Functions                   |
+//|                                                                  |
+//|                                                                  |
+//+------------------------------------------------------------------+
+bool IsPRZDetected()
+{
+    // Add code to detect Price Reversal Zones based on Fibonacci percentages
+
+    return false;  // Return true if PRZ is detected, otherwise false
+}
+
+void OpenTrade()
+{
+    // Add code to open trades based on the detected PRZ
+
+    // Set stop-loss and take-profit levels for each trade
+    SetStopLossAndTakeProfit();
+
+    // Implement risk management features
+    ImplementRiskManagement();
+}
+
+bool IsReversalAreaDetected()
+{
+    // Add code to detect crucial areas with potential for reversal using Volume Profile FR indicator
+
+    return false;  // Return true if reversal area is detected, otherwise false
+}
+
+void ManageTrades()
+{
+    // Add code to manage trades using Volume Profile FR indicator
+
+    // Set stop-loss and take-profit levels for each trade
+    SetStopLossAndTakeProfit();
+
+    // Implement risk management features
+    ImplementRiskManagement();
+}
+
+void MonitorTrades()
+{
+    // Add code to monitor trades and account balance
+}
+
+void ImplementTrailingStop()
+{
+    // Add code to implement trailing stop functionality
+}
+
+void ImplementBreakEven()
+{
+    // Add code to implement break-even functionality
+}
+
+void HandleTradeExecution()
+{
+    // Add code to handle trade execution and order management
+}
+
+void SetStopLossAndTakeProfit()
+{
+    // Add code to set stop-loss and take-profit levels for each trade
+}
+
+void ImplementRiskManagement()
+{
+    // Add code to implement risk management features
+}
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//|                                                                  |
+//|                        Expert Advisor Deinitialization            |
+//|                                                                  |
+//|                                                                  |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+    // Add deinitialization code here
+}
